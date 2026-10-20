@@ -1,0 +1,18 @@
+{
+  "name": "perq",
+  "description": "Perq skill and MCP server: verified free AI credits, free tiers and startup programs.",
+  "owner": { "name": "Avatar 8 LLC", "email": "ops@avatar33.com" },
+  "plugins": [
+    {
+      "name": "perq",
+      "source": "./",
+      "description": "Find verified free AI credits, free tiers, startup programs and student perks, with source links.",
+      "version": "1.0.0",
+      "author": { "name": "Avatar 8 LLC", "email": "ops@avatar33.com" },
+      "homepage": "https://perq.sh/agents",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["ai-credits", "free-tier", "startup-programs", "student", "perks"]
+    }
+  ]
+}

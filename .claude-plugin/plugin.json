@@ -1,0 +1,10 @@
+{
+  "name": "perq",
+  "description": "Find verified free AI credits, free tiers, startup programs and student perks, with source links.",
+  "version": "1.0.0",
+  "author": { "name": "Avatar 8 LLC", "email": "ops@avatar33.com", "url": "https://perq.sh" },
+  "homepage": "https://perq.sh/agents",
+  "repository": "https://github.com/f-o-x11/perq-skill",
+  "license": "MIT",
+  "keywords": ["ai-credits", "free-tier", "startup-programs", "student", "perks", "mcp", "agent-skills"]
+}

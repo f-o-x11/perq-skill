@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "perq": {
+      "type": "http",
+      "url": "https://perq.sh/mcp"
+    }
+  }
+}
