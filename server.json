@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "sh.perq/perq",
+  "title": "Perq",
+  "description": "Verified free AI credits, free tiers and startup programs, each with source link and verified date.",
+  "version": "1.0.0",
+  "websiteUrl": "https://perq.sh/agents",
+  "repository": { "url": "https://github.com/f-o-x11/perq-skill", "source": "github" },
+  "remotes": [
+    { "type": "streamable-http", "url": "https://perq.sh/mcp" }
+  ]
+}

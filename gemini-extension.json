@@ -1,0 +1,9 @@
+{
+  "name": "perq",
+  "version": "1.0.0",
+  "description": "Verified free AI credits, free tiers, startup programs and student perks, with source links.",
+  "mcpServers": {
+    "perq": { "httpUrl": "https://perq.sh/mcp" }
+  },
+  "contextFileName": "skills/perq/SKILL.md"
+}

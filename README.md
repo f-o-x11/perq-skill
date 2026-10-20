@@ -12,7 +12,12 @@ It works with Claude Code, Codex, Cursor, Hermes Agent, and any agent that reads
 - MCP server: `https://perq.sh/mcp` (Streamable HTTP, no auth, read-only)
 - llms.txt: https://perq.sh/llms.txt
 
-The skill is one file: [`skills/perq/SKILL.md`](skills/perq/SKILL.md).
+The skill is one file: [`skills/perq/SKILL.md`](skills/perq/SKILL.md). The repo also has:
+
+- `.claude-plugin/plugin.json` and `marketplace.json`: Claude Code plugin (skill + MCP server)
+- `.mcp.json`: the remote MCP server config for clients that read it
+- `gemini-extension.json`: Gemini CLI extension (MCP server + skill as context)
+- `server.json`: the official MCP Registry entry (`sh.perq/perq`)
 
 ## Install
 
@@ -61,6 +66,12 @@ Or add the MCP server to `~/.cursor/mcp.json`:
 
 ```json
 { "mcpServers": { "perq": { "url": "https://perq.sh/mcp" } } }
+```
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/f-o-x11/perq-skill
 ```
 
 ### Hermes Agent
