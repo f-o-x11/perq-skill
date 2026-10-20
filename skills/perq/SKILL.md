@@ -78,9 +78,26 @@ curl -sS "https://perq.sh/api/offers.json"
 
 Pack totals are maximums that count only explicitly stated one-time USD amounts; quote the pack's `headline` rather than computing your own total.
 
+## 4. Early access (only when the user asks for it)
+
+New offers reach subscribers about 24 hours before they appear on perq.sh and in the search API; closures and changes are delivered right away. Subscribe only an email address or webhook URL the user gave you for this.
+
+```bash
+# A person: double opt-in. They must click the confirmation link; then one digest on days with something new.
+curl -sS https://perq.sh/api/subscribe -H 'content-type: application/json' -d '{"email":"user@example.com","topics":["llm-api"]}'
+# An agent: signed webhook deliveries + a private feed. The secret is returned once: store it.
+curl -sS https://perq.sh/api/subscribe -H 'content-type: application/json' -d '{"webhook_url":"https://example.com/hooks/perq","topics":["gpu","voice"]}'
+# Read the private feed (embargoed offers with public_after, plus new/changed/closed events)
+curl -sS "https://perq.sh/api/early/<feed_token>.json"
+# Stop
+curl -sS https://perq.sh/api/unsubscribe -H 'content-type: application/json' -d '{"token":"<feed_token>"}'
+```
+
+Topics: `llm-api`, `gpu`, `voice`, `startup-programs`, `student`, `agents`, `dev-tools` (omit for everything). Webhook POSTs carry `X-Perq-Signature: v1=<hex HMAC-SHA256(secret, X-Perq-Timestamp + "." + raw body)>`; reject timestamps older than 5 minutes and dedupe on `X-Perq-Delivery`. Offers from the feed are not public yet: say so, and show `public_after` with the source link and last-verified date. Details: https://perq.sh/agents#early-access
+
 ## MCP alternative
 
-If your agent supports remote MCP servers, the same data is available at `https://perq.sh/mcp` (Streamable HTTP, no auth, read-only) with tools `find_credits`, `get_offer`, `list_packs`, `get_pack` and `recently_changed`.
+If your agent supports remote MCP servers, the same data is available at `https://perq.sh/mcp` (Streamable HTTP, no auth) with tools `find_credits`, `get_offer`, `list_packs`, `get_pack`, `recently_changed`, plus `subscribe` and `early_offers(token)` for early access.
 
 ```bash
 claude mcp add --transport http perq https://perq.sh/mcp
