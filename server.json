@@ -3,7 +3,7 @@
   "name": "sh.perq/perq",
   "title": "Perq",
   "description": "Verified free AI credits, free tiers and startup programs, each with source link and verified date.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://perq.sh/agents",
   "repository": { "url": "https://github.com/f-o-x11/perq-skill", "source": "github" },
   "remotes": [
