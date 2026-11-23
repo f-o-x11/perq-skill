@@ -53,7 +53,7 @@ curl -sS -G "https://perq.sh/api/search" --data-urlencode "q=GPU for a bootstrap
 curl -sS -G "https://perq.sh/api/search" --data-urlencode "q=LLM API" -d student=true -d ref=skill
 ```
 
-Each result has: `id`, `vendor`, `category`, `offer_type`, `status`, `credit_value`, `eligibility`, `how_to_claim`, `code`, `claim_url`, `source_url`, `source_snippet`, `last_verified`, `no_application`, `perq_url`.
+Each result has: `id`, `vendor`, `category`, `offer_type`, `status`, `credit_value`, `eligibility`, `how_to_claim`, `code`, `claim_url`, `claim_url_is_referral`, `source_url`, `source_snippet`, `last_verified`, `no_application`, `perq_url`.
 
 ## 2. Answer the user
 
@@ -61,7 +61,7 @@ For each offer you mention, show:
 
 - **Vendor: credit_value** (use the exact wording; do not round, convert or add up amounts yourself)
 - Eligibility and how to claim
-- Claim link: `claim_url`
+- Claim link: `claim_url` (if `claim_url_is_referral` is true, tell the user it is a referral link, or give `source_url`, the vendor's own page)
 - `Source: <source_url> (verified <last_verified date>)`
 
 Rules:
